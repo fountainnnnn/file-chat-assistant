@@ -48,7 +48,7 @@
           <div class="card pastel-card shadow-sm mb-4">
             <div class="card-body p-4">
               <h3 class="fw-semibold mb-3 text-accent">Upload your document</h3>
-              <form id="upload-form" class="gy-3">
+              <form id="upload-form" class="gy-3" enctype="multipart/form-data" method="post">
                 <div class="mb-3">
                   <label class="form-label">Choose file (.pdf / .docx / .txt)</label>
                   <input id="file-input" class="form-control" type="file" name="file" accept=".pdf,.docx,.txt" required />
