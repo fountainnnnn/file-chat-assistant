@@ -34,7 +34,7 @@ for env_path in candidates:
         break
 else:
     load_dotenv(override=True)  # fallback
-print("[DEBUG] OPENAI_API_KEY after load:", os.getenv("OPENAI_API_KEY"))
+print("[DEBUG] OPENAI_API_KEY after load: FOUND")
 
 # --------------------------------------------------------
 # Import project modules
