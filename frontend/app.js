@@ -1,7 +1,7 @@
 // Backend origin (override with ?api=https://your-api.com)
 const BACKEND_BASE_URL =
   new URLSearchParams(location.search).get("api") ||
-  "http://localhost:8000"; // default local dev
+  "https://crystallizedcrust-file-chat-assistant.hf.space"; // default local dev
 
 // DOM
 const uploadForm = document.getElementById("upload-form");
