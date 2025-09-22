@@ -1,7 +1,7 @@
 // Backend origin (override with ?api=https://your-api.com)
 const BACKEND_BASE_URL =
   new URLSearchParams(location.search).get("api") ||
-  "https://crystallizedcrust-file-chat-assistant.hf.space"; // default local dev
+  "https://crystallizedcrust-file-chat-assistant.hf.space"; // Hugging Face Space backend
 
 // DOM
 const uploadForm = document.getElementById("upload-form");
@@ -68,7 +68,8 @@ uploadForm.addEventListener("submit", async (e) => {
       body: fd,
     });
     if (!resp.ok) {
-      throw new Error(`Upload failed: HTTP ${resp.status}`);
+      const errorText = await resp.text();
+      throw new Error(`Upload failed: HTTP ${resp.status} - ${errorText}`);
     }
     const data = await resp.json();
     sessionId = data.session_id;
@@ -118,7 +119,8 @@ askForm.addEventListener("submit", async (e) => {
       body: fd,
     });
     if (!resp.ok) {
-      throw new Error(`Ask failed: HTTP ${resp.status}`);
+      const errorText = await resp.text();
+      throw new Error(`Ask failed: HTTP ${resp.status} - ${errorText}`);
     }
     const data = await resp.json();
 
